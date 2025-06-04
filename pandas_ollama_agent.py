@@ -6,7 +6,9 @@ import pandas as pd
 
 from langchain_community.llms import Ollama
 from langchain.agents.agent_types import AgentType
-from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+from langchain_experimental.agents.agent_toolkits import (
+    create_pandas_dataframe_agent,
+)
 
 
 def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> Ollama:
@@ -24,14 +26,20 @@ def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> Oll
     return Ollama(model=model, base_url=base_url)
 
 
-def create_dataframe_agent(df: pd.DataFrame, llm: Ollama):
+def create_dataframe_agent(
+    df: pd.DataFrame,
+    llm: Ollama,
+    *,
+    verbose: bool = False,
+    allow_dangerous_code: bool = True,
+) -> "AgentExecutor":
     """Create a LangChain pandas DataFrame agent using the provided LLM."""
     return create_pandas_dataframe_agent(
         llm,
         df,
         agent_type=AgentType.OPENAI_FUNCTIONS,
-        verbose=False,
-        allow_dangerous_code=True,
+        verbose=verbose,
+        allow_dangerous_code=allow_dangerous_code,
     )
 
 
