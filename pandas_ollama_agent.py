@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import pandas as pd
 
-from langchain_community.llms import Ollama
+from langchain_community.chat_models import ChatOllama
 from langchain.agents.agent_types import AgentType
 from langchain_experimental.agents.agent_toolkits import (
     create_pandas_dataframe_agent,
 )
 
 
-def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> Ollama:
+def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> ChatOllama:
     """Create an Ollama LLM instance.
 
     Parameters
@@ -23,12 +23,12 @@ def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> Oll
     """
     if base_url is None:
         base_url = "http://localhost:11434"
-    return Ollama(model=model, base_url=base_url)
+    return ChatOllama(model=model, base_url=base_url)
 
 
 def create_dataframe_agent(
     df: pd.DataFrame,
-    llm: Ollama,
+    llm: ChatOllama,
     *,
     verbose: bool = False,
     allow_dangerous_code: bool = True,

@@ -7,6 +7,9 @@ This repository now includes a small utility module `pandas_ollama_agent.py`
 that demonstrates how to build a LangChain agent for working with pandas data
 frames powered by an Ollama-hosted language model.
 
+The helper ``create_ollama_llm`` instantiates ``ChatOllama`` from
+``langchain_community``, so the agent uses a chat-oriented interface.
+
 `data.csv` in this repository provides a tiny example dataset so you can try
 out the agent immediately.
 
