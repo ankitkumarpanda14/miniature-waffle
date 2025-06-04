@@ -11,7 +11,7 @@ from langchain_experimental.agents.agent_toolkits import (
 )
 
 
-def create_ollama_llm(model: str = "llama3", base_url: str | None = None) -> ChatOllama:
+def create_ollama_llm(model: str = "codellama:7b", base_url: str | None = None) -> ChatOllama:
     """Create an Ollama LLM instance.
 
     Parameters
