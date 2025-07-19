@@ -4,3 +4,5 @@ langchain-community
 langchain-experimental
 tabulate
 pytest
+fastapi
+uvicorn
