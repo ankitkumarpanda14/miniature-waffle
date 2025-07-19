@@ -1,0 +1,25 @@
+{
+  "name": "ollama-code-assistant",
+  "displayName": "Ollama Code Assistant",
+  "description": "Query an Ollama-powered coding assistant from VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:ollamaCodeAssistant.ask"
+  ],
+  "main": "extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ollamaCodeAssistant.ask",
+        "title": "Ask Ollama Assistant"
+      }
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
