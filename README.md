@@ -48,5 +48,5 @@ Then install the extension dependencies and launch the extension host from the
 npm install
 ```
 
-Run the **Ask Ollama Assistant** command to query the model with the selected
-code.
+Run the **Ask Ollama Assistant** command and enter a question when prompted to
+query the model with the selected code.

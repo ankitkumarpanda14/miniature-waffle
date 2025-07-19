@@ -2,7 +2,8 @@
 
 This extension sends the selected code from the editor to a local API
 (`http://localhost:8000/query`) that uses an Ollama language model.
-The response is displayed in an output channel.
+When you run the command you'll be asked to provide a question for the
+assistant. The response is displayed in an output channel.
 
 ## Development
 

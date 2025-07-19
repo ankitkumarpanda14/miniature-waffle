@@ -9,8 +9,18 @@ async function askAssistant() {
   }
   const selection = editor.selection;
   const text = editor.document.getText(selection.isEmpty ? undefined : selection);
+  const question = await vscode.window.showInputBox({
+    prompt: 'Enter your question for the assistant (leave empty to explain the code)'
+  });
+  if (question === undefined) {
+    // User canceled the input box
+    return;
+  }
   try {
-    const response = await axios.post('http://localhost:8000/query', { code: text });
+    const response = await axios.post('http://localhost:8000/query', {
+      code: text,
+      question: question || null,
+    });
     const output = response.data.answer || response.data;
     const channel = vscode.window.createOutputChannel('Ollama Assistant');
     channel.appendLine(output);
