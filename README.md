@@ -31,9 +31,9 @@ print(response)
 ## VSCode Coding Assistant
 
 The `code_assistant_server.py` module exposes a FastAPI server that can answer
-questions about code snippets using an Ollama LLM. A minimal VSCode extension
-located in `vscode-extension/` sends the selected code to this server and shows
-the response in an output channel.
+questions about code snippets using an Ollama LLM. A VSCode extension in
+`vscode-extension/` sends the selected code to this server and displays the
+assistant's answers in an interactive chat panel.
 
 Start the API server:
 
@@ -48,5 +48,5 @@ Then install the extension dependencies and launch the extension host from the
 npm install
 ```
 
-Run the **Ask Ollama Assistant** command and enter a question when prompted to
-query the model with the selected code.
+Run the **Ask Ollama Assistant** command to open the chat panel. Enter questions
+to query the model with the currently selected code.
